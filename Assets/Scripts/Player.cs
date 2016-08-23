@@ -36,5 +36,12 @@ public class Player : MonoBehaviour {
 		foreach (GameObject g in gameOverObjects) {
 			g.SetActive (true);
 		}
+
+		Invoke ("ShowBannerGameOver", 0.5f);
+
+	}
+
+	void ShowBannerGameOver (){
+		GameObject.Find ("Main Camera").GetComponent<Ads> ().SendMessage ("ShowGameOverBanner");
 	}
 }
