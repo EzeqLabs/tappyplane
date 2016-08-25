@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
-	public Vector2 jumpForce = new Vector2(0,300);
+	public Vector2 jumpForce = new Vector2(0,130);
 	GameObject[] gameOverObjects;
 
 	void Start(){
