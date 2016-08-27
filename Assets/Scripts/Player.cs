@@ -4,10 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
-	public Vector2 jumpForce = new Vector2(0,300);
+	public Vector2 jumpForce = new Vector2(0,0.1f);
 	GameObject[] gameOverObjects;
+	bool isRunning;
 
 	void Start(){
+		isRunning = true;
+
 		gameOverObjects = GameObject.FindGameObjectsWithTag ("gameOverObjects");
 		foreach (GameObject g in gameOverObjects) {
 			g.SetActive (false);
@@ -16,8 +19,10 @@ public class Player : MonoBehaviour {
 
 	void Update () {
 		if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended){
-			GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-			GetComponent<Rigidbody2D>().AddForce (jumpForce);
+			if (isRunning){
+				GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+				GetComponent<Rigidbody2D>().AddForce (jumpForce);	
+			}
 		}
 
 		Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
@@ -31,10 +36,19 @@ public class Player : MonoBehaviour {
 	}
 
 	void Die(){
+		isRunning = false;
+
 		GameObject.Find("Scripts").GetComponent<Generate>().SendMessage("CancelInvoking");
 
 		foreach (GameObject g in gameOverObjects) {
 			g.SetActive (true);
 		}
+
+		Invoke ("ShowBannerGameOver", 0.5f);
+
+	}
+
+	void ShowBannerGameOver (){
+		GameObject.Find ("Main Camera").GetComponent<Ads> ().SendMessage ("ShowGameOverBanner");
 	}
 }

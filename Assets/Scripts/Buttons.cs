@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour {
 	public void GoToGame(){
-		SceneManager.LoadScene("game");
+		GameObject.Find ("Main Camera").GetComponent<Ads> ().SendMessage ("HideMenuBanner");
+		SceneManager.LoadSceneAsync ("game");
 	}
 
 	public void GoToMenu(){
