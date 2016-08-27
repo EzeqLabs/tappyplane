@@ -14,6 +14,7 @@ public class Obstacle : MonoBehaviour {
 		Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
 		if (screenPosition.x <= -Screen.width){
 			GameObject.Find("Scripts").GetComponent<Score>().SendMessage("IncrementAndDrawScore");
+			GameObject.Find("Scripts").GetComponent<Score>().SendMessage("SetNewHighscore");
 			Destroy (gameObject);
 		}
 	}
