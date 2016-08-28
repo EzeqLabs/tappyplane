@@ -7,9 +7,20 @@ public class Player : MonoBehaviour {
 	public Vector2 jumpForce = new Vector2(0,0.1f);
 	GameObject[] gameOverObjects;
 	bool isRunning;
+	public static Sprite playerDefault, playerBlue, playerGray, playerPink, playerPurple, playerRed, playerYellow;
+	public Sprite[] players = {playerDefault
+		, playerBlue
+		, playerGray
+		, playerPink
+		, playerPurple
+		, playerRed
+		, playerYellow};
 
 	void Start(){
 		isRunning = true;
+
+		int playerIndex = 0;//PlayerPrefs.GetInt ("playerActive");
+		GetComponent<SpriteRenderer> ().sprite = players[playerIndex];
 
 		gameOverObjects = GameObject.FindGameObjectsWithTag ("gameOverObjects");
 		foreach (GameObject g in gameOverObjects) {
