@@ -361,6 +361,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3420d0edf4b474fa0ca10d205d8376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 
+  price: 0
+  bt_buy: {fileID: 0}
+  bt_use: {fileID: 0}
 --- !u!1 &574431292
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,10 +640,15 @@ Prefab:
     - target: {fileID: 11443874, guid: 505f8e9620fba4d59b6c67095775953c, type: 2}
       propertyPath: players.Array.data[5]
       value: 
-      objectReference: {fileID: 21300000, guid: 28de8269d7c904408ae34df614c211e6,
+      objectReference: {fileID: 21300000, guid: c642fcbbd249f4b61b43c68bd555474a,
         type: 3}
     - target: {fileID: 11443874, guid: 505f8e9620fba4d59b6c67095775953c, type: 2}
       propertyPath: players.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 28de8269d7c904408ae34df614c211e6,
+        type: 3}
+    - target: {fileID: 11443874, guid: 505f8e9620fba4d59b6c67095775953c, type: 2}
+      propertyPath: players.Array.data[7]
       value: 
       objectReference: {fileID: 21300000, guid: 4198e4d90480849d496fffe6824a20e1,
         type: 3}
@@ -1046,6 +1055,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3420d0edf4b474fa0ca10d205d8376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 
+  price: 0
+  bt_buy: {fileID: 0}
+  bt_use: {fileID: 0}
 --- !u!1 &1253223445
 GameObject:
   m_ObjectHideFlags: 0

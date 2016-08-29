@@ -22,7 +22,7 @@ public class Coins : MonoBehaviour {
 	}
 
 	public void DrawCoins(){
-		coinsText.text = coins.ToString();
+		coinsText.text = PlayerPrefs.GetInt ("Coins").ToString();
 	}
 
 	int GetCoins(){
