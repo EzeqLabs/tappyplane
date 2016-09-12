@@ -23,7 +23,7 @@ public class Score : MonoBehaviour {
 	}
 
 	public void DrawScore(){
-		scoreText.text = "Score: " + score.ToString();
+		scoreText.text = "Placar: " + score.ToString();
 	}
 
 	int GetBestScore(){
@@ -31,7 +31,7 @@ public class Score : MonoBehaviour {
 	}
 
 	public void DrawBestScore(){
-		bestScore.text = "Best score: " + GetBestScore();
+		bestScore.text = "Recorde: " + GetBestScore();
 	}
 
 	public void SetNewHighscore(){
