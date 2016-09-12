@@ -17,6 +17,8 @@ public class Score : MonoBehaviour {
 
 	public void IncrementAndDrawScore(){
 		this.score += 1;
+		GameObject.Find ("Scripts").GetComponent<PlayGames> ().SendMessage ("AchievementRocks", score);
+		GameObject.Find ("Scripts").GetComponent<PlayGames> ().SendMessage ("PostLeaderboard", score);
 		DrawScore ();
 	}
 
