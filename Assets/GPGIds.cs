@@ -35,13 +35,18 @@ public static class GPGIds
         public const string achievement_best_pilot = "CgkIqbWpsaoMEAIQDA"; // <GPGSID>
         public const string achievement_purple_plane = "CgkIqbWpsaoMEAIQEA"; // <GPGSID>
         public const string achievement_thirty_rocks = "CgkIqbWpsaoMEAIQBQ"; // <GPGSID>
+        public const string achievement_150k = "CgkIqbWpsaoMEAIQGA"; // <GPGSID>
         public const string achievement_forty_rocks = "CgkIqbWpsaoMEAIQBg"; // <GPGSID>
+        public const string achievement_50k = "CgkIqbWpsaoMEAIQFw"; // <GPGSID>
+        public const string achievement_30k = "CgkIqbWpsaoMEAIQFg"; // <GPGSID>
         public const string achievement_orange_plane = "CgkIqbWpsaoMEAIQEQ"; // <GPGSID>
         public const string achievement_were_having_fun = "CgkIqbWpsaoMEAIQBw"; // <GPGSID>
         public const string achievement_first_rocks = "CgkIqbWpsaoMEAIQAg"; // <GPGSID>
         public const string achievement_ten_rocks = "CgkIqbWpsaoMEAIQAw"; // <GPGSID>
         public const string achievement_ninety_rocks = "CgkIqbWpsaoMEAIQCw"; // <GPGSID>
         public const string achievement_seventy_rocks = "CgkIqbWpsaoMEAIQCQ"; // <GPGSID>
+        public const string achievement_5k = "CgkIqbWpsaoMEAIQFA"; // <GPGSID>
+        public const string achievement_10k = "CgkIqbWpsaoMEAIQFQ"; // <GPGSID>
         public const string achievement_yellow_plane = "CgkIqbWpsaoMEAIQEw"; // <GPGSID>
 
 }

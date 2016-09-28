@@ -80,6 +80,14 @@ public class PlayGames : MonoBehaviour {
 
 	}
 
+	void AchivementsCoins(int coins){
+		PlayGamesPlatform.Instance.IncrementAchievement (GPGIds.achievement_5k, coins, (bool success) => {});
+		PlayGamesPlatform.Instance.IncrementAchievement (GPGIds.achievement_10k, coins, (bool success) => {});
+		PlayGamesPlatform.Instance.IncrementAchievement (GPGIds.achievement_30k, coins, (bool success) => {});
+		PlayGamesPlatform.Instance.IncrementAchievement (GPGIds.achievement_50k, coins, (bool success) => {});
+		PlayGamesPlatform.Instance.IncrementAchievement (GPGIds.achievement_150k, coins, (bool success) => {});
+	}
+
 	// SHOP
 	void AchievementBluePlane (){
 		Social.ReportProgress(GPGIds.achievement_blue_plane, 100.0f, (bool success) => {});
