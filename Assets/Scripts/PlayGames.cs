@@ -86,6 +86,28 @@ public class PlayGames : MonoBehaviour {
 		PlayGamesPlatform.Instance.IncrementAchievement (GPGIds.achievement_30k, coins, (bool success) => {});
 		PlayGamesPlatform.Instance.IncrementAchievement (GPGIds.achievement_50k, coins, (bool success) => {});
 		PlayGamesPlatform.Instance.IncrementAchievement (GPGIds.achievement_150k, coins, (bool success) => {});
+
+		switch(coins){
+			case 10:
+				Social.ReportProgress(GPGIds.achievement_5k, 100.0f, (bool success) => {});
+				break;
+			
+			case 20:
+				Social.ReportProgress(GPGIds.achievement_10k, 100.0f, (bool success) => {});
+				break;
+			
+			case 60:
+				Social.ReportProgress(GPGIds.achievement_30k, 100.0f, (bool success) => {});
+				break;
+			
+			case 100:
+				Social.ReportProgress(GPGIds.achievement_50k, 100.0f, (bool success) => {});
+				break;
+			
+			case 300:
+				Social.ReportProgress(GPGIds.achievement_150k, 100.0f, (bool success) => {});
+				break;
+		}
 	}
 
 	// SHOP
