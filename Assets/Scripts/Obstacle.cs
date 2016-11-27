@@ -15,6 +15,7 @@ public class Obstacle : MonoBehaviour {
 		if (screenPosition.x <= -Screen.width){
 			GameObject.Find("Scripts").GetComponent<Score>().SendMessage("IncrementAndDrawScore");
 			GameObject.Find("Scripts").GetComponent<Score>().SendMessage("SetNewHighscore");
+			GameObject.Find("Scripts").GetComponent<Coins>().SendMessage("IncrementAndDrawCoins");
 			Destroy (gameObject);
 		}
 	}

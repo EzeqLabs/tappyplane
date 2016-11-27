@@ -17,11 +17,13 @@ public class Score : MonoBehaviour {
 
 	public void IncrementAndDrawScore(){
 		this.score += 1;
+		GameObject.Find ("Scripts").GetComponent<PlayGames> ().SendMessage ("AchievementRocks", score);
+		GameObject.Find ("Scripts").GetComponent<PlayGames> ().SendMessage ("PostLeaderboard", score);
 		DrawScore ();
 	}
 
 	public void DrawScore(){
-		scoreText.text = "Score: " + score.ToString();
+		scoreText.text = "Placar: " + score.ToString();
 	}
 
 	int GetBestScore(){
@@ -29,7 +31,7 @@ public class Score : MonoBehaviour {
 	}
 
 	public void DrawBestScore(){
-		bestScore.text = "Best score: " + GetBestScore();
+		bestScore.text = "Recorde: " + GetBestScore();
 	}
 
 	public void SetNewHighscore(){
