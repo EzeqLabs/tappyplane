@@ -17,6 +17,7 @@ public class Player : MonoBehaviour {
 		, playerRed
 		, playerYellow};
 	int playerIndex = PlayerPrefs.GetInt ("playerActive");
+	float lastY = -999999;
 
 	void Start(){
 		isRunning = true;
@@ -30,16 +31,35 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update () {
+		Rigidbody2D player = GetComponent<Rigidbody2D> ();
+
 		if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended){
 			if (isRunning){
-				GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-				GetComponent<Rigidbody2D>().AddForce (jumpForce);	
+				player.velocity = Vector2.zero;
+				player.AddForce (jumpForce);
 			}
 		}
 
 		Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
 		if (screenPosition.y > Screen.height || screenPosition.y < 0){
 			Die();
+		}
+	}
+
+	void FixedUpdate(){
+		Rigidbody2D player = GetComponent<Rigidbody2D> ();
+		float actualY = player.velocity.y;
+
+		if (lastY == -999999) {
+			lastY = actualY;
+		} else {
+			if (lastY > actualY) {
+//				player.angularVelocity = -5;
+				player.MoveRotation (-700 * Time.fixedDeltaTime);
+			}else{
+				player.angularVelocity = 5;
+				player.MoveRotation (700 * Time.fixedDeltaTime);
+			}
 		}
 	}
 
